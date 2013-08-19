@@ -61,7 +61,7 @@ pkgconfiged.touch: installed.touch
 
 fetch:
 	@echo "\n Fetching $(POD_NAME) from $(FETCH_URL) \n"
-	wget -O $(POD_NAME).tar.gz $(FETCH_URL)
+	wget --no-check-certificate -O $(POD_NAME).tar.gz $(FETCH_URL)
 	@touch fetched.touch
 
 unarchive:
@@ -72,7 +72,7 @@ unarchive:
 build-source:
 	@echo "\n Building $(POD_NAME) \n"
 	@mkdir -p pod_build
-	cd $(POD_NAME) && ./config --prefix=$(BUILD_PREFIX)
+	cd $(POD_NAME) && ./config --prefix=$(BUILD_PREFIX) -shared
 	cd $(POD_NAME) && make
 	@touch built.touch
 

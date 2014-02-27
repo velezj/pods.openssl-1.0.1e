@@ -78,7 +78,7 @@ build-source:
 
 install-source:
 	@echo "\n Installing $(POD_NAME) \n"
-	cd $(POD_NAME) && make install
+	cd $(POD_NAME) && make all && make install_sw
 	@touch installed.touch
 
 pkgconfig-source:

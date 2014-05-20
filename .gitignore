@@ -1,0 +1,6 @@
+pod-build/
+*~
+*.touch
+*.tar.*
+openssl-1.0.1e/
+
